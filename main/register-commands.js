@@ -49,15 +49,17 @@ function RegisterCommands(Object) {
 
 		// Register user's commands
 		var commands = configOf('commands').value;
-		commands instanceof Array ?
-			addCommands.fromConfig(commands) :
-			commonWarn(new TypeError(`Property "cmd-exec.commands" of config.cson must be an array`));
+		addCommands.fromConfig(commands);
 
 	}
 
 	addCommands.fromConfig = (commands) => {
-		configsubscriptions = new CompositeDisposable();
-		utils.tryCatch(getConfigCommands.bind(null, commands, addUserCommand), commonWarn);
+		if (commands instanceof Array) {
+			configsubscriptions = new CompositeDisposable();
+			utils.tryCatch(getConfigCommands.bind(null, commands, addUserCommand), commonWarn);
+		} else {
+			utils.warn(`Config key 'cmd-exec.commands' must be an array of key-value pair objects`);
+		}
 	}
 
 	function addUserCommand(desc) {

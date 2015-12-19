@@ -28,7 +28,7 @@ Create property `cmd-exec` to store an object, and property `commands` of this o
 
  - Property `target`: An array which contains "target" strings which commands will be registered in, e.g. `"atom-workspace"`, `"atom-text-editor"`...
 
- - Property `data`: A key-value pair object
+ - Property `data`: *An array* which contains *key-value pair objects* has the structure below
   - Key: An atom command which will be registered to `atom.commands` (e.g. `"my-cmd:bash"`, `my-cmd:compile`), so it available in Command Palette, and you are able to create shortcut key and menu item for it.
   - Value: A string which contains shell command (as same as `path` of Command Properties Structure when `type` is `"spawn"`) or an object of which has *Command Properties Structure* (see below).
 
@@ -39,7 +39,7 @@ Create property `cmd-exec` to store an object, and property `commands` of this o
   - Property `console` (optional): If `true`, a console would be opened, makes sense only of `type` is `"spawn"` or `"fork"`, this property is `false` by default.
   - Property `closeOnExit` (optional): If `true`, console would be closed right after stdio stream is close (i.e. all processes which uses that stream finished), makes sense only if `console` is `true`, this property is `false` by default.
   - Property `hideInputText` (optional): If `true`, console would not display text which was entered by the user, makes sense only if `console` is `true`.
-  - Property `utils` (optional): An array which contains names of some special utilities which would be executed instead of being written to stdin when console is opening, e.g. `"clear"`, `"exit"`, `"start"`, `"beep"` and [many more]().
+  - Property `utils` (optional): An array which contains names of some special utilities which would be executed instead of being written to stdin when console is opening, e.g. `"clear"`, `"exit"`, `"start"`, `"beep"` and [more]().
 
 ### Executing command
 

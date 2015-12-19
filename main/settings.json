@@ -1,0 +1,10 @@
+
+{
+	"pane-item-position": {
+		"title": "Console position",
+		"description": "New console which was created by Command Executer would be placed here if there's no own config in config.cson",
+		"type": "string",
+		"default": "center",
+		"enum": ["center", "top", "left", "bottom", "right"]
+	}
+}

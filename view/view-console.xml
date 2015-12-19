@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" id="htmlElement" class="cmd-exec view-console pane-item">
+	<head>
+		<meta charset="UTF-8" />
+		<title id="title">Console - Command Executor</title>
+	</head>
+	<body class="pane-item">
+		<div id="readablediv" class="text-unselectable">
+			<div id="innerreadablediv">
+				<div id="descriptiondiv" />
+				<pre id="outputpre" class="text-selectable text-copiable" />
+				<div id="finaloutputdiv" class="text-success" />
+			</div>
+		</div>
+		<div id="inputdiv">
+			<div id="editordiv" />
+			<button id="confirmbutton">Enter</button>
+		</div>
+	</body>
+</html>

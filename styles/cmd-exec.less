@@ -1,0 +1,147 @@
+
+@import "ui-variables";
+@import "./atom-suitable-style.less";
+@import "./ksx-stylesheet.less";
+@import "./package-variables.less";
+
+@{package} {
+
+	#titleheader {
+		font-size: @font-size * 1.2;
+	}
+
+	.text-link:hover {
+		color: @text-color-highlight;
+		text-decoration: underline;
+	}
+
+	.code {
+		font-family: @monospace;
+		color: @text-color-highlight;
+	}
+
+}
+
+@{package}.view-console {
+
+	body {
+		overflow: hidden !important;
+	}
+
+	div {
+		margin: 0px;
+		border: none;
+		padding: 0px;
+	}
+
+	#readablediv {
+
+		overflow: hidden;
+		margin-bottom: 30px + @input-height !important;
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		#innerreadablediv {
+
+			overflow: auto !important;
+			padding-top: @output-margin;
+			padding-bottom: @input-height;
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			top: 0px;
+			// bottom: @input-height + @output-margin;
+			bottom: @input-height;
+
+			#descriptiondiv, #outputpre, #finaloutputdiv {
+				margin: 0px @output-margin 0px @output-margin;
+			}
+
+			#descriptiondiv {
+				font-size: @font-size * 1.2;
+			}
+
+			#outputpre {
+
+				background-color: @input-background-color !important;
+				border: 1px solid @input-border-color !important;
+				padding: 30px;
+
+				span {
+					font-family: @monospace !important;
+					font-size: @font-size;
+					width: @font-size !important;
+					height: @font-size !important;
+					background: @input-background-color !important;
+				}
+
+				.from-input {
+					color: @text-color-highlight !important;
+				}
+
+				.from-data {
+					color: @text-color !important;
+				}
+
+				.text-error {
+					color: @text-color-error !important;
+				}
+
+			}
+
+		}
+
+	}
+
+	#inputdiv {
+
+		position: absolute;
+		width: 100%;
+		height: @input-height;
+		bottom: 0px;
+		left: 0px;
+
+		atom-text-editor {
+			font-family: @monospace;
+		}
+
+		button {
+			position: absolute;
+			width: @confirm-button-width;
+			height: 100%;
+			right: 0px;
+			top: 0px;
+		}
+
+		#descriptiondiv {
+			font-size: 3em;
+		}
+
+		#editordiv {
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			padding-right: @confirm-button-width;
+		}
+
+	}
+
+}
+
+@{package}.view-manage {
+
+	atom-text-editor {
+		font-family: @monospace;
+	}
+
+	.secondary {
+		padding-left: 30px;
+	}
+
+	#cmddatacfgdiv {
+		padding-top: 10px;
+	}
+
+}

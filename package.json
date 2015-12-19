@@ -1,0 +1,30 @@
+{
+	"name": "CommandExecuter",
+	"main": "./main/main.js",
+	"version": "1.0.0",
+	"description": "Create and manage shell commands, also support JS file",
+	"keywords": [
+		"CommandExecuter",
+		"CmdExec",
+		"command-executer",
+		"cmd-exec",
+		"exec",
+		"shell",
+		"terminal",
+		"command-prompt",
+		"bash",
+		"cmd",
+		"stdio",
+		"stdin",
+		"stdout"
+	],
+	"repository": "https://github.com/atom/cmd-exec",
+	"license": "MIT",
+	"engines": {
+		"atom": ">=1.0.0 <2.0.0"
+	},
+	"dependencies": {
+		"ksxatomsupports": ">=1.0.0",
+		"vm-utils": ">=0.0.1"
+	}
+}

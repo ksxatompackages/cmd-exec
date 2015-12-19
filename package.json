@@ -18,7 +18,7 @@
 		"stdin",
 		"stdout"
 	],
-	"repository": "https://github.com/atom/cmd-exec",
+	"repository": "https://github.com/ksxatompackages/cmd-exec",
 	"license": "MIT",
 	"engines": {
 		"atom": ">=1.0.0 <2.0.0"

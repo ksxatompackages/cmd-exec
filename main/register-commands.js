@@ -49,7 +49,9 @@ function RegisterCommands(Object) {
 
 		// Register user's commands
 		var commands = configOf('commands').value;
-		addCommands.fromConfig(commands);
+		commands instanceof Array ?
+			addCommands.fromConfig(commands) :
+			commonWarn(new TypeError(`Property "cmd-exec.commands" of config.cson must be an array`));
 
 	}
 

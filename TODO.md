@@ -4,7 +4,7 @@
 ## TODO NEXT
 
  - [ ] Multi-pane (issue #2)
-  - [ ] Select pane before open console
+  - [X] Select pane before open console
   - [ ] Make ability to be copied/moved to another pane
 
  - [ ] Support template string for property `path`

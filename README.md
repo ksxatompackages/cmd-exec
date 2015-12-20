@@ -35,6 +35,7 @@ Create property `cmd-exec` to store an object, and property `commands` of this o
  - Command Properties Structure
   - Property `type` (required): One of `"spawn"`, `"fork"`, `"require"`, `"eval"`.
   - Property `path` (required): A string. If `type` is `"spawn"`, `path` is a shell command which would be executed. If `type` is `"fork"`, `path` should leads to a JavaScript file which would run as a independent [node](https://nodejs.org) process. If `type` is `"require"`, `path` should leads to a node module, would be executed once, and return a function which would be invoked when you execute the command (see "Key" above), by this way, you can hack atom UI. If `type` is `"eval"`, `path` should leads to a JavaScript file which would be executed in an isolated context.
+  - Property `useJSTemplateString` (optional): If `true`, `path` will be read as a JavaScript template string, this property is `false` by default.
   - Property `wdir` (optional): Determines "current working directory", makes sense only if `type` is `"spawn"` or `"fork"`. If not specified, use directory of activated file (which opened by the activated tab).
   - Property `console` (optional): If `true`, a console would be opened, makes sense only of `type` is `"spawn"` or `"fork"`, this property is `false` by default.
   - Property `closeOnExit` (optional): If `true`, console would be closed right after stdio stream is close (i.e. all processes which uses that stream finished), makes sense only if `console` is `true`, this property is `false` by default.

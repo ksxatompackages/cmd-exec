@@ -7,7 +7,7 @@
   - [X] Select pane before open console
   - [ ] Make ability to be copied/moved to another pane
 
- - [ ] Support template string for property `path`
+ - [X] Support template string for property `path`
 
  - [ ] Clipboard: bring "copy" to console's context menu
 

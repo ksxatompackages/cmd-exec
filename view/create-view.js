@@ -4,6 +4,7 @@
 
 	var registerPaneItem = require('ksxatomsupports').pane_view.registerPaneItem;
 	var createIdListFromURL = require('../lib/create-list.js').fromURL;
+	const PKG_NAME = require('../package.json').name;
 
 	module.exports = function createView(name, disposable, id, param) {
 
@@ -43,9 +44,15 @@
 		}
 
 		function show(callback) {
-			callback(atom.workspace.open(uri));
+			callback(atom.workspace.open(uri, new OpenPaneItemOptions()));
 		}
 
+	}
+
+	class OpenPaneItemOptions {
+		constructor() {
+			this.split = atom.config.get(`${PKG_NAME}.pane-item-position`);
+		}
 	}
 
 })(module);

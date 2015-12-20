@@ -1,8 +1,8 @@
 
 {
 	"pane-item-position": {
-		"title": "Console position",
-		"description": "New console which was created by Command Executer would be placed here if there's no own config in config.cson",
+		"title": "Pane position",
+		"description": "See `options.split` at https://atom.io/docs/api/v1.3.1/Workspace#instance-open for more infomation",
 		"type": "string",
 		"default": "",
 		"enum": ["", "top", "left", "bottom", "right"]

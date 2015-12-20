@@ -21,3 +21,5 @@
 ## TODO LATER
 
  - [ ] Also support panel along side with pane
+
+ - [ ] Get current working directory: how to get cwd from a child process?

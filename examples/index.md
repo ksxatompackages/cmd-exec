@@ -25,5 +25,5 @@ Shell command: `g++ -std=c++14 -o ./main.exe ./main.cpp`
 ![compile-cplusplus](./compile-cplusplus.gif)
 
 ## Tips: Keybinding - You may already know :relaxed:
-If you ask me what're `direct-launch:build-py` and `direct-launch-no-console:execute-py`, that's my own commands, I created them for my own needs :sunglasses:
+If you ask me what are `direct-launch:build-py` and `direct-launch-no-console:execute-py`, that's my own commands, I created them for my own needs :sunglasses:
 ![my-own-methods](./my-own-methods.gif)

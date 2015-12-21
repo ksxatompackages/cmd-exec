@@ -32,7 +32,7 @@
             hideInputText: true
             utils: [
               "clear" # Enter 'clear' in console, your console would be cleared
-              "start" # Enter 'start <cmd>'' in console, a new console would be opened
+              "start" # Enter 'start <cmd>' in console, a new console would be opened
               "stdin" # Enter 'stdin <data>', '<data>' would be written to child_process.stdin,
                   # e.g. 'stdin start <cmd>' would run '<cmd>' in a new windows instead of inside Atom
               "beep" # Just like atom.beep()

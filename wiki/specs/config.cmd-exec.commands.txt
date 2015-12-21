@@ -1,6 +1,7 @@
 
 DESCRIPTION:
  * Key 'config.cmd-exec.commands' has type 'AtomCommandsList' below
+ * JSONObject is either dictionary or struct
 END DESCRIPTION
 
 alias JSONArray = sequence;

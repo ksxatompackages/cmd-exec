@@ -5,10 +5,10 @@ Manage, execute shell/javascript commands.
 
 ## Features
  - Loads commands from config.cson, registers them to `atom.commands`.
- - Emulate a simple shell/terminal.
+ - Simulate a simple shell/terminal.
 
 ## What can I do with this package?
- - Emulate a terminal, command prompt.
+ - Simulate a terminal, command prompt.
  - Run a system command (i.e. bash-script, cmd) directly from Atom Workspace, and so you can:
   - Make a simple command to compile C/C++, CoffeeScript, LESS, SASS...
   - Run your file directly, e.g. Python, NodeJS...

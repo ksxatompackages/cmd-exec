@@ -1,7 +1,7 @@
 
 # cmd-exec package
 
-Manage, execute shell/javascript commands.
+Manage, execute shell/javascript commands in your Atom.
 
 ## Features
  - Loads commands from config.cson, registers them to `atom.commands`.
@@ -13,6 +13,16 @@ Manage, execute shell/javascript commands.
   - Make a simple command to compile C/C++, CoffeeScript, LESS, SASS...
   - Run your file directly, e.g. Python, NodeJS...
   - And many, many more...
+
+## Installation
+
+```bash
+apm install command-executer
+```
+
+## Requirements
+
+ * Atom must support ECMAScript 6 syntax
 
 ## User Manual
 

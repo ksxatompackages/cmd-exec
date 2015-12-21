@@ -36,7 +36,7 @@
               "stdin" # Enter 'stdin <data>', '<data>' would be written to child_process.stdin,
                   # e.g. 'stdin start <cmd>' would run '<cmd>' in a new windows instead of inside Atom
               "beep" # Just like atom.beep()
-              "alert" # 'alert <title> <msg>'
+              "alert" # 'alert <msg>'
             ]
             closeOnExit: true
 

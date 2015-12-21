@@ -3,8 +3,8 @@ DESCRIPTION:
  * Key 'config.cmd-exec.commands' has type 'AtomCommandsList' below
 END DESCRIPTION
 
-typedef sequence JSONArray;
-typedef dictionary JSONObject;
+alias JSONArray = sequence;
+alias JSONObject = dictionary;
 
 typedef JSONArray<CommandProperties> AtomCommandsList;
 
@@ -13,7 +13,12 @@ struct CommandProperties {
 	JSONObject<Command, CommandProperties> data;
 }
 
-typedef string Command; // for example: 'compile-c-plus-plus:gnu-plus-plus'
+either DeepArray<type> {
+	JSONArray<DeepArray<type>>,
+	type
+}
+
+alias Command = string; // for example: 'compile-c-plus-plus:gnu-plus-plus'
 
 struct CommandProperties {
 	ExecutionType type;

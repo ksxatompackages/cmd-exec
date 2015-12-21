@@ -1,7 +1,7 @@
 {
   "name": "command-executer",
   "main": "./main/main.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Create and manage shell commands, also support JS file",
   "keywords": [
     "CommandExecuter",

@@ -1,0 +1,35 @@
+
+DESCRIPTION:
+ * Key 'config.cmd-exec.commands' has type 'AtomCommandsList' below
+END DESCRIPTION
+
+typedef sequence JSONArray;
+typedef dictionary JSONObject;
+
+typedef JSONArray<CommandProperties> AtomCommandsList;
+
+struct CommandProperties {
+	DeepArray<string> target;
+	JSONObject<Command, CommandProperties> data;
+}
+
+typedef string Command; // for example: 'compile-c-plus-plus:gnu-plus-plus'
+
+struct CommandProperties {
+	ExecutionType type;
+	string path;
+	bool useJSTemplateString;
+	if (type in ["spawn", "fork"]) {
+		string wdir;
+		bool console = false;
+		bool closeOnExit = false;
+		bool hideInputText = false;
+		JSONArray<UtilName> utils;
+	}
+}
+
+enum ExecutionType = string {
+	"require", "eval", "spawn", "fork"
+}
+
+enum UtilName = string;

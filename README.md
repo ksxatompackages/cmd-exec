@@ -25,6 +25,7 @@ In Atom's menu bar, go to File &rarr; Open Your Config.
 #### Create `cmd-exec.commands`
 
  * See this [example config.cson](https://github.com/ksxatompackages/cmd-exec/blob/master/examples/config.cson#L12)
+ * See this [specs](https://github.com/ksxatompackages/cmd-exec/blob/master/wiki/specs/config.cmd-exec.commands.txt)
 
 Create property `cmd-exec` to store an object, and property `commands` of this object is an array, each element of that array is an object which has the following structure
 

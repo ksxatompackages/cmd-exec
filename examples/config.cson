@@ -64,7 +64,7 @@
             useJSTemplateString: true
 
             # Important: path here would be compiled as a JavaScript template string
-            path: 'bash -c "echo current file is ${CURRENT_FILE} which is placed inside ${CURRENT_DIR}"'
+            path: 'cmd /c cmd /k start "echo current file is ${CURRENT_FILE} which is placed inside ${CURRENT_DIR}"'
 
             console: true # To see the result
 

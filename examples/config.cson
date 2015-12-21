@@ -1,0 +1,84 @@
+"*":
+
+	# This is Atom's config.cson default properties, don't mind this
+	welcome:
+		showOnStartup: false
+	"tool-bar":
+		visible: false
+	"markdown-preview":
+		breakOnSingleNewline: true
+
+	# Here we go
+	"cmd-exec": # An object
+
+		commands: [ # An array
+
+			{
+
+				target: ["atom-workspace"] # Target is an array or a string
+
+				data:
+
+					"os:explorer": "explorer ." # (Windows only) Open containing folder in File Explorer
+
+					"os:cmd": # (Windows only) Open containing folder (which contains ativated file in Atom) in Command Prompt
+						type: "spawn"
+						path: "cmd /c start cmd" # Open new console
+
+					"console:cmd": # (Windows only) Open containing folder in Command Prompt, but inside Atom (open a new pane item)
+						type: "spawn"
+						path: "cmd"
+						console: true
+						hideInputText: true
+						utils: [
+							"clear" # Enter 'clear' in console, your console would be cleared
+							"start" # Enter 'start <cmd>'' in console, a new console would be opened
+							"stdin" # Enter 'stdin <data>', '<data>' would be written to child_process.stdin,
+									# e.g. 'stdin start <cmd>' would run '<cmd>' in a new windows instead of inside Atom
+							"beep" # Just like atom.beep()
+							"alert" # 'alert <title> <msg>'
+						]
+						closeOnExit: true
+
+					"console:bash": # Open containing folder in Bash inside Atom
+						type: "spawn"
+						path: "bash"
+						console: true
+						utils: [
+							"clear"
+							"alert"
+							"error"
+							"write"
+							"stdin"
+							"environ"
+							"beep"
+							"start"
+							"execute"
+							"popup"
+						]
+						closeOnExit: true
+
+					"test-example:current-file":
+
+						type: "spawn"
+						useJSTemplateString: true
+
+						# Important: path here would be compiled as a JavaScript template string
+						path: 'bash -c "echo current file is ${CURRENT_FILE} which is placed inside ${CURRENT_DIR}"'
+
+						console: true # To see the result
+
+					"compile:gnu-cplusplus": # Compile current C++ file by g++
+
+						type: "spawn"
+						useJSTemplateString: true
+
+						# Info: some available node modules: path, fs, os, url, Math, JSON, console (Atom's Chrome DevTools), utils (from CmdExec itself)
+						# Info: some available variables: CURRENT_FILE, CURRENT_DIR, env (Environment Variables)
+						path: "g++ ${CURRENT_FILE} -std=c++14 -o ${path.basename(CURRENT_FILE, '.cpp')}"
+
+						console: true
+
+			}
+
+		]

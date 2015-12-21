@@ -19,9 +19,9 @@
 
 				data:
 
-					"os:explorer": "explorer ." # (Windows only) Open containing folder in File Explorer
+					"os:explorer": "explorer ." # (Windows only) Open containing folder (which contains ativated file in Atom) in File Explorer
 
-					"os:cmd": # (Windows only) Open containing folder (which contains ativated file in Atom) in Command Prompt
+					"os:cmd": # (Windows only) Open containing folder in Command Prompt
 						type: "spawn"
 						path: "cmd /c start cmd" # Open new console
 

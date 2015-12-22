@@ -3,6 +3,8 @@
 
 ## TODO NEXT
 
+ - [ ] Console control commands: `cmd-exec:clear-or-close`, `cmd-exec:clear`, `cmd-exec:close`
+
  - [ ] Multi-pane (issue #2)
   - [X] Select pane before open console
   - [ ] Make ability to be copied/moved to another pane

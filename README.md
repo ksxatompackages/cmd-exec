@@ -1,7 +1,7 @@
 
 # cmd-exec package
 
-Manage, execute shell/javascript commands in your Atom.
+Manage and execute shell/javascript commands in your Atom.
 
 ## Features
  - Loads commands from config.cson, registers them to `atom.commands`.

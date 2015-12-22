@@ -1,10 +1,9 @@
 
-(function (module) {
+(function (module, undefined) {
 	'use strict';
 
 	var registerPaneItem = require('ksxatomsupports').pane_view.registerPaneItem;
 	var createIdListFromURL = require('../lib/create-list.js').fromURL;
-	const PKG_NAME = require('../package.json').name;
 
 	module.exports = function createView(name, disposable, id, param) {
 
@@ -19,17 +18,17 @@
 
 	module.exports.create = (pathoe, xmlpath, jspath, uri, disposable, param) => {
 
-		var current = (callback) => {
+		var current = (...args) => {
 			load(() => {
 				current = show;
-				show(callback);
+				show(...args);
 			});
 		}
 
 		return main;
 
-		function main(callback) {
-			current(typeof callback === 'function' ? callback : () => {});
+		function main(callback, ...args) {
+			current(typeof callback === 'function' ? callback : () => {}, ...args);
 		}
 
 		function load(onloadend) {
@@ -43,16 +42,10 @@
 			});
 		}
 
-		function show(callback) {
-			callback(atom.workspace.open(uri, new OpenPaneItemOptions()));
+		function show(callback, options) {
+			callback(atom.workspace.open(uri, options));
 		}
 
-	}
-
-	class OpenPaneItemOptions {
-		constructor() {
-			this.split = atom.config.get(`${PKG_NAME}.pane-item-position`);
-		}
 	}
 
 })(module);

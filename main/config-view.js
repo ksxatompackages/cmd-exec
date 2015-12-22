@@ -6,6 +6,8 @@ function ConfigView() {
 	var utils = require('../lib/utils.js');
 	var createView = require('../view/create-view.js');
 
+	const PKG_NAME = require('../package.json').name;
+
 	var configview = this;
 
 	var viewid = 0;
@@ -24,7 +26,7 @@ function ConfigView() {
 				handlePromise: (handle) => handlePromise.all.push(handle),
 				services: new ViewerService(descriptor, param)
 			});
-			view((promise) => promise.then(handlePromise));
+			view((promise) => promise.then(handlePromise), new OpenPaneItemOptions(descriptor));
 			subscriptions.add(disposable);
 			typeof onerror === 'function' && child.on('error', handleError);
 		});
@@ -42,6 +44,13 @@ function ConfigView() {
 	configview.createForChild = (descriptor, param) => new ViewerService(descriptor, param);
 
 	configview.view = () => {};
+
+	class OpenPaneItemOptions {
+		constructor(descriptor) {
+			var split = descriptor.paneItemPosition;
+			this.split = split === undefined ? atom.config.get(`${PKG_NAME}.pane-item-position`) : split;
+		}
+	}
 
 	class ViewerService {
 

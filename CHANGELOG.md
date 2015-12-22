@@ -1,4 +1,7 @@
 
+## v1.1.6
+ * Support local property `paneItemPosition`
+
 ## v1.1.5
  * Added copy to console's context menu
 

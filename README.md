@@ -53,8 +53,9 @@ Create property `cmd-exec` to store an object, and property `commands` of this o
   - Property `wdir` (optional): Determines "current working directory", makes sense only if `type` is `"spawn"` or `"fork"`. If not specified, use directory of activated file (which opened by the activated tab).
   - Property `console` (optional): If `true`, a console would be opened, makes sense only of `type` is `"spawn"` or `"fork"`, this property is `false` by default.
   - Property `closeOnExit` (optional): If `true`, console would be closed right after stdio stream is close (i.e. all processes which uses that stream finished), makes sense only if `console` is `true`, this property is `false` by default.
-  - Property `hideInputText` (optional): If `true`, console would not display text which was entered by the user, makes sense only if `console` is `true`.
+  - Property `hideInputText` (optional): If `true`, console would not display text which was entered by the user, makes sense only if `console` is `true`. this property is `false` by default.
   - Property `utils` (optional): An array which contains names of some special utilities which would be executed instead of being written to stdin when console is opening, e.g. `"clear"`, `"exit"`, `"start"`, `"beep"` and [more](https://github.com/ksxatompackages/cmd-exec/blob/master/lib/special-commands.js#L98).
+  - Property `paneItemPosition` (optional): If it was a string, it would override `config.command-executer.pane-item-position`, determine where console should be located, makes sense only if `console` is `true`.
 
 ### Executing command
 

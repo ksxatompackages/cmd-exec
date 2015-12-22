@@ -4,7 +4,6 @@ function RegisterCommands(Object) {
 
 	var CompositeDisposable = require('atom').CompositeDisposable;
 	var EditorUtil = require('ksxatomsupports').editor.EditorUtil;
-	var createView = require('../view/create-view.js');
 	var configOf = require('../lib/config.js').forKey;
 	var createHandle = require('../lib/script.js').createHandle;
 	var utils = require('../lib/utils.js');

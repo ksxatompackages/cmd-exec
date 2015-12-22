@@ -27,4 +27,5 @@ apm install command-executer
 
 ## User Manual
 
-Honestly, you definitely have to read this before using this package, be sure that you have a Web browser, then let's [go](https://github.com/ksxatompackages/cmd-exec-documentation/blob/master/wiki/user-manual/start.md).
+Honestly, you definitely have to read this one below before using this package, be sure that you have a Web browser, then let's go:
+Link: https://github.com/ksxatompackages/cmd-exec-documentation/blob/master/wiki/user-manual/start.md

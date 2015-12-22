@@ -1,4 +1,7 @@
 
+## v1.1.5
+ * Added copy to console's context menu
+
 ## v1.1.0
  * Added ability to change pane for console
  * Added string template feature for `path`

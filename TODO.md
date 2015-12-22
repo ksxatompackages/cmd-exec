@@ -9,7 +9,7 @@
 
  - [X] Support template string for property `path`
 
- - [ ] Clipboard: bring "copy" to console's context menu
+ - [X] Clipboard: bring "copy" to console's context menu
 
  - [ ] Escape character
   - [ ] Don't write some messy stuffs

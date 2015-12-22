@@ -43,7 +43,7 @@ function RegisterCommands(Object) {
 	function addCommands() {
 
 		// Register utility commands
-		defaultsubscriptions.add(atom.commands.add('.cmd-exec .text-selectable', {
+		defaultsubscriptions.add(atom.commands.add('.cmd-exec .text-copiable', {
 			'cmd-exec:copy': copySelection
 		}));
 

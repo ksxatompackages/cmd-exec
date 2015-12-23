@@ -19,7 +19,7 @@ Manage and execute shell/javascript commands in your Atom.
 ## Installation
 
 ```bash
-apm install command-executer
+apm install command-executor
 ```
 
 ## Requirements

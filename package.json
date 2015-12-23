@@ -19,7 +19,8 @@
     "cmd",
     "stdio",
     "stdin",
-    "stdout"
+    "stdout",
+	"open-file-location"
   ],
   "repository": "https://github.com/ksxatompackages/cmd-exec",
   "license": "MIT",

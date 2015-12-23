@@ -99,11 +99,16 @@
 		}
 
 		function handleStdIn(elements, stdin) {
-			if (!stdin) return;
+			if (!stdin) {
+				return;
+			}
 			var editorutil = buildTextEditor(elements);
 			handleControl(editorutil, elements, stdin);
 			focusInputElement(editorutil);
-			handleCommon.handlePromise((paneitem) => paneitem.onDidActive(() => focusInputElement(editorutil)));
+			handleCommon.handlePromise((paneitem) => {
+				paneitem.onDidActive(() => focusInputElement(editorutil));
+				paneitem.acceptToBeClosed = () => editorutil.empty;
+			});
 			enterStdIn.history = new ConsoleHistory();
 			elements.outputpre.hidden = true;
 		}

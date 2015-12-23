@@ -57,7 +57,9 @@ function RegisterCommands(Object) {
 			configsubscriptions = new CompositeDisposable();
 			utils.tryCatch(getConfigCommands.bind(null, commands, addUserCommand), commonWarn);
 		} else {
-			utils.warn(`Config key 'cmd-exec.commands' must be an array of key-value pair objects`);
+			if (commands !== undefined) {
+				utils.warn(`Config key 'cmd-exec.commands' must be an array of key-value pair objects`);
+			}
 		}
 	}
 

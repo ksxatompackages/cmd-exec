@@ -1,4 +1,7 @@
 
+## v1.2.2
+ * Add property `classes`, so users can add class to console views
+
 ## v1.2.0
  * Move copy feature (at console) to [another package](https://atom.io/packages/enable-clipboard-helper)
 

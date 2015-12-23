@@ -32,7 +32,15 @@ function ConfigView() {
 		});
 
 		var handlePromise = (paneitem) => handlePromise.all.forEach((call) => call(paneitem));
-		handlePromise.all = [(paneitem) => paneitem.path = param.input.options.cwd];
+		handlePromise.all = [
+			(paneitem) => {
+				paneitem.path = param.input.options.cwd;
+				var classes = descriptor.classes;
+				var classList = paneitem.view.classList;
+				classes && utils.iterable.deep(classes)
+					.map((classname) => classList.add(classname));
+			}
+		];
 
 		var handleError = (error) => {
 			handlePromise.all.push((paneitem) => paneitem.destroy());

@@ -25,7 +25,7 @@
   "repository": "https://github.com/ksxatompackages/cmd-exec",
   "license": "MIT",
   "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+    "atom": ">=1.2.0 <2.0.0"
   },
   "dependencies": {
     "ksxatomsupports": ">=1.0.0",

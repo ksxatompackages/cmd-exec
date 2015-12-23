@@ -36,7 +36,9 @@ function ConfigView() {
 			(paneitem) => {
 				paneitem.path = param.input.options.cwd;
 				var classes = descriptor.classes;
-				var classList = paneitem.view.classList;
+				var view = paneitem.view;
+				view.getPaneItem = () => paneitem;
+				var classList = view.classList;
 				classes && utils.iterable.deep(classes)
 					.map((classname) => classList.add(classname));
 			}

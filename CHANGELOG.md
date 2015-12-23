@@ -1,4 +1,7 @@
 
+## v1.2.0
+ * Move copy feature (at console) to [another package](https://atom.io/packages/enable-clipboard-helper)
+
 ## v1.1.6
  * Support local property `paneItemPosition`
 

@@ -12,12 +12,10 @@ function Main() {
 
 	function activate() {
 		require('./register-commands.js').activate();
-		require('./register-menu.js').activate();
 	}
 
 	function deactivate() {
 		require('./register-commands.js').deactivate();
-		require('./register-menu.js').deactivate();
 	}
 
 }

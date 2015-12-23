@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" id="htmlElement" class="cmd-exec view-console pane-item enable-cliboard-helper">
+<html xmlns="http://www.w3.org/1999/xhtml" id="htmlElement" class="cmd-exec view-console pane-item enable-clipboard-helper">
 	<head>
 		<meta charset="UTF-8" />
 		<title id="title">Console - Command Executor</title>

@@ -1,12 +1,12 @@
 {
-  "name": "command-executer",
+  "name": "command-executor",
   "main": "./main/main.js",
   "version": "1.1.8",
   "description": "Create, manage and run shell commands, JS files",
   "keywords": [
-    "CommandExecuter",
+    "CommandExecutor",
     "CmdExec",
-    "command-executer",
+    "command-executor",
     "cmd-exec",
     "exec",
     "command",
@@ -20,7 +20,7 @@
     "stdio",
     "stdin",
     "stdout",
-	"open-file-location"
+    "open-file-location"
   ],
   "repository": "https://github.com/ksxatompackages/cmd-exec",
   "license": "MIT",

@@ -32,7 +32,7 @@ function ConfigView() {
 		});
 
 		var handlePromise = (paneitem) => handlePromise.all.forEach((call) => call(paneitem));
-		handlePromise.all = [];
+		handlePromise.all = [(paneitem) => paneitem.path = param.input.options.cwd];
 
 		var handleError = (error) => {
 			handlePromise.all.push((paneitem) => paneitem.destroy());

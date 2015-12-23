@@ -3,7 +3,8 @@
 
 ## TODO NEXT
 
- - [ ] Console control commands: `cmd-exec:close-if-input-is-empty`, `cmd-exec:clear`, `cmd-exec:close`
+ - [ ] ~~Console control commands: `cmd-exec:close-if-input-is-empty`, `cmd-exec:clear`, `cmd-exec:close`~~
+  - Go to [enable-pane-item-control-helper](https://atom.io/packages/enable-pane-item-control-helper)
 
  - [ ] Multi-pane (issue #2)
   - [X] Select pane before open console

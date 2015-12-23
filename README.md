@@ -27,6 +27,11 @@ If you use console simulator and want to copy text in the console, you would nee
 apm install enable-clipboard-helper
 ```
 
+If you use console simulator and want to close it by an atom command or by a keystroke (e.g. <kbd>ESC</kbd>), you would need [enable-pane-item-control-helper](https://atom.io/packages/enable-pane-item-control-helper):
+```bash
+apm install enable-pane-item-control-helper
+```
+
 ## Requirements
 
  * Atom must support ECMAScript 6 syntax

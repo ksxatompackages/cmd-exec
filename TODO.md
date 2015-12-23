@@ -3,7 +3,7 @@
 
 ## TODO NEXT
 
- - [ ] Console control commands: `cmd-exec:clear-or-close`, `cmd-exec:clear`, `cmd-exec:close`
+ - [ ] Console control commands: `cmd-exec:close-if-input-is-empty`, `cmd-exec:clear`, `cmd-exec:close`
 
  - [ ] Multi-pane (issue #2)
   - [X] Select pane before open console

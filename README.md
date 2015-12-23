@@ -22,6 +22,11 @@ Manage and execute shell/javascript commands in your Atom.
 apm install command-executor
 ```
 
+If you use console simulator and want to copy text in the console, you would need [enable-clipboard-helper](https://atom.io/packages/enable-clipboard-helper):
+```bash
+apm install enable-clipboard-helper
+```
+
 ## Requirements
 
  * Atom must support ECMAScript 6 syntax

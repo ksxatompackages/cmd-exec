@@ -18,6 +18,8 @@ Manage and execute shell/javascript commands in your Atom.
 
 ## Installation
 
+To install this package, open terminal and enter:
+
 ```bash
 apm install command-executor
 ```
@@ -27,7 +29,7 @@ If you use console simulator and want to copy text in the console, you would nee
 apm install enable-clipboard-helper
 ```
 
-If you use console simulator and want to close it by an atom command or by a keystroke (e.g. <kbd>ESC</kbd>), you would need [enable-pane-item-control-helper](https://atom.io/packages/enable-pane-item-control-helper):
+If you use console simulator and want to close it by an atom command or by a keystroke (e.g. <kbd>ESC</kbd>), you would need [enable-pane-item-control-helper](https://atom.io/packages/enable-pane-item-control-helper) (below) and read [this tips-and-tricks](https://github.com/ksxatompackages/cmd-exec-documentation/wiki/user-manual/tips-and-tricks.md#quick-close):
 ```bash
 apm install enable-pane-item-control-helper
 ```

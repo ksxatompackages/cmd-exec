@@ -1,4 +1,9 @@
 
+## v1.2.6
+ * Change console command appearance when `useJSTemplateString`:
+  - Then: Display template string
+  - Now: Display calculated result of the template string
+
 ## v1.2.5
  * Improved console cwd:
   - Then: Current working directory of a new console which open from an old console is parent directory of the working directory of the old one

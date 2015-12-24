@@ -45,6 +45,7 @@
 		}
 
 		function handleCommon(elements, param) {
+			elements.descriptiondiv.textContent = `Running: ${param.fromScript.path}`;
 			((proto) => {
 				proto.process = param.process;
 				proto.services = param.services;
@@ -55,7 +56,6 @@
 		}
 
 		function handleConfig(elements, config) {
-			elements.descriptiondiv.textContent = `Running: ${config.path}`;
 			enterStdIn.write = config.hideInputText ? () => {} : writeStringBuffer;
 			handleClose.considerClosePaneItem = config.closeOnExit ? closePaneItem : () => {};
 			handleSpecialCommand(config);

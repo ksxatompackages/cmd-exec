@@ -3,6 +3,8 @@
 
 ## TODO NEXT
 
+ - [ ] Fix [enable-pane-item-control-helper](https://github.com/ksxatompackages/enable-pane-item-control-helper.git)
+
  - [ ] ~~Console control commands: `cmd-exec:close-if-input-is-empty`, `cmd-exec:clear`, `cmd-exec:close`~~
   - Go to [enable-pane-item-control-helper](https://atom.io/packages/enable-pane-item-control-helper)
 

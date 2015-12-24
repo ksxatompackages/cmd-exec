@@ -34,7 +34,7 @@ function ConfigView() {
 		var handlePromise = (paneitem) => handlePromise.all.forEach((call) => call(paneitem));
 		handlePromise.all = [
 			(paneitem) => {
-				paneitem.path = param.input.options.cwd;
+				paneitem.path = require('path').join(param.input.options.cwd, '{{cmd-exec-console}}');
 				var classes = descriptor.classes;
 				var view = paneitem.view;
 				view.getPaneItem = () => paneitem;

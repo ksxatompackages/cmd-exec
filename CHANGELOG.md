@@ -1,4 +1,9 @@
 
+## v1.2.5
+ * Improved console cwd:
+  - Then: Current working directory of a new console which open from an old console is parent directory of the working directory of the old one
+  - Now: They are the same
+
 ## v1.2.2
  * Add property `classes`, so users can add class to console views
  * Support [pane-item-control](https://atom.io/packages/enable-pane-item-control-helper), which allows users to close console pane item quickly, See [tips-and-tricks](https://github.com/ksxatompackages/cmd-exec-documentation/blob/master/wiki/user-manual/tips-and-tricks.md#quick-close)

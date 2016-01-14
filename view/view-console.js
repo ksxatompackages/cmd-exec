@@ -3,6 +3,7 @@
 	'use strict';
 
 	var copySelection = require('ksxatomsupports').clipboard.copySelection;
+	var compareSequence = require('../lib/utils.js').compareSequence.iterable;
 	var ConsoleHistory = require('../lib/console-history.js');
 	var specialcmds = require('../lib/special-commands.js');
 
@@ -30,8 +31,7 @@
 			handleError: handleError,
 			handleClose: handleClose,
 			writeStdIn: writeStdIn,
-			writeStringBuffer: writeStringBuffer,
-			writeCharCode: writeCharCode,
+			writeString: writeString,
 			closePaneItem: closePaneItem
 		};
 
@@ -56,7 +56,7 @@
 		}
 
 		function handleConfig(elements, config) {
-			enterStdIn.write = config.hideInputText ? () => {} : writeStringBuffer;
+			enterStdIn.write = config.hideInputText ? () => {} : writeString;
 			handleClose.considerClosePaneItem = config.closeOnExit ? closePaneItem : () => {};
 			handleSpecialCommand(config);
 		}
@@ -169,7 +169,7 @@
 		}
 
 		function handleData(elements, data) {
-			writeStringBuffer(elements.outputpre, new Buffer(`${data}`), OUT_DATA);
+			writeString(elements.outputpre, `${data}`, OUT_DATA);
 		}
 
 		function handleStdErr(elements, stderr) {
@@ -178,23 +178,21 @@
 		}
 
 		function handleError(elements, error) {
-			writeStringBuffer(elements.outputpre, new Buffer(`${error}\n`), OUT_ERROR);
+			writeString(elements.outputpre, `${error}\n`, OUT_ERROR);
 		}
 
-		function writeStringBuffer(outputpre, string, extraclass) {
+		function writeString(outputpre, string, extraclass) {
 			outputpre.hidden = false;
-			for (let char of string) {
-				writeCharCode(outputpre, char, extraclass);
+			var target = writeString.target;
+			if (!target || !compareSequence(extraclass, writeString.extraclass)) {
+				writeString.extraclass = extraclass;
+				target = writeString.target = document.createElement('span');
+				outputpre.insertBefore(target, null);
+				extraclass instanceof Array && extraclass.forEach((classname) => target.classList.add(classname));
 			}
+			target.textContent += String(string);
 			outputpre.parentElement.scrollTop = outputpre.parentElement.scrollHeight;
 		}
-
-		 function writeCharCode(outputpre, char, extraclass) {
-			var ch = document.createElement('span');
-			ch.textContent = String.fromCodePoint(char);
-		 	extraclass instanceof Array && extraclass.forEach((classname) => ch.classList.add(classname));
-		 	outputpre.insertBefore(ch, null);
-		 }
 
 		function closePaneItem() {
 			setTimeout(() => handleCommon.paneItem.destroy());

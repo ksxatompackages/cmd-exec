@@ -3,7 +3,7 @@
 
 ## TODO NEXT
 
- - [ ] Grouping characters
+ - [X] Grouping characters
 
  - [ ] Fix [enable-pane-item-control-helper](https://github.com/ksxatompackages/enable-pane-item-control-helper.git)
 
@@ -23,7 +23,8 @@
   - [ ] Colorize console (issue #3)
   - [ ] Detect clear code
 
- - [ ] Console encoding: UTF-8 seems not so good at this context
+ - [X] Console encoding: ~~UTF-8 seems not so good at this context~~
+  - Use `String` instead of iterate each char of a `Buffer`
 
 ## TODO LATER
 

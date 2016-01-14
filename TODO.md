@@ -3,6 +3,8 @@
 
 ## TODO NEXT
 
+ - [ ] Grouping characters
+
  - [ ] Fix [enable-pane-item-control-helper](https://github.com/ksxatompackages/enable-pane-item-control-helper.git)
 
  - [ ] ~~Console control commands: `cmd-exec:close-if-input-is-empty`, `cmd-exec:clear`, `cmd-exec:close`~~

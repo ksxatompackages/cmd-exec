@@ -191,7 +191,7 @@
 
 		 function writeCharCode(outputpre, char, extraclass) {
 			var ch = document.createElement('span');
-			ch.textContent = String.fromCodePoint(char);
+			ch.textContent += String.fromCodePoint(char);
 		 	extraclass instanceof Array && extraclass.forEach((classname) => ch.classList.add(classname));
 		 	outputpre.insertBefore(ch, null);
 		 }

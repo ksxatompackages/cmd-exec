@@ -1,4 +1,8 @@
 
+## v1.2.7
+ * Fixed encoding
+ * Same continuous characters would be contained in one `<span>`
+
 ## v1.2.6
  * Change console command appearance when `useJSTemplateString`:
   - Then: Display template string

@@ -194,22 +194,12 @@
 			for (let char of string) {
 				target.textContent += String.fromCharCode(char);
 			}
-			// for (let char of string) {
-			// 	writeCharCode(target, char, extraclass);
-			// }
 			outputpre.parentElement.scrollTop = outputpre.parentElement.scrollHeight;
 		}
 
 		function writeCharCode(outputpre, char, extraclass) {
 			writeStringBuffer(outputpre, [char], extraclass);
 		}
-
-		// function writeCharCode(outputpre, char, extraclass) {
-		// 	var ch = document.createElement('span');
-		// 	ch.textContent += String.fromCodePoint(char);
-		// 	extraclass instanceof Array && extraclass.forEach((classname) => ch.classList.add(classname));
-		// 	outputpre.insertBefore(ch, null);
-		// }
 
 		function closePaneItem() {
 			setTimeout(() => handleCommon.paneItem.destroy());

@@ -31,8 +31,7 @@
 			handleError: handleError,
 			handleClose: handleClose,
 			writeStdIn: writeStdIn,
-			writeStringBuffer: writeStringBuffer,
-			writeCharCode: writeCharCode,
+			writeString: writeString,
 			closePaneItem: closePaneItem
 		};
 
@@ -57,7 +56,7 @@
 		}
 
 		function handleConfig(elements, config) {
-			enterStdIn.write = config.hideInputText ? () => {} : writeStringBuffer;
+			enterStdIn.write = config.hideInputText ? () => {} : writeString;
 			handleClose.considerClosePaneItem = config.closeOnExit ? closePaneItem : () => {};
 			handleSpecialCommand(config);
 		}
@@ -170,7 +169,7 @@
 		}
 
 		function handleData(elements, data) {
-			writeStringBuffer(elements.outputpre, new Buffer(`${data}`), OUT_DATA);
+			writeString(elements.outputpre, `${data}`, OUT_DATA);
 		}
 
 		function handleStdErr(elements, stderr) {
@@ -179,26 +178,20 @@
 		}
 
 		function handleError(elements, error) {
-			writeStringBuffer(elements.outputpre, new Buffer(`${error}\n`), OUT_ERROR);
+			writeString(elements.outputpre, `${error}\n`, OUT_ERROR);
 		}
 
-		function writeStringBuffer(outputpre, string, extraclass) {
+		function writeString(outputpre, string, extraclass) {
 			outputpre.hidden = false;
-			var target = writeStringBuffer.target;
-			if (!target || !compareSequence(extraclass, writeStringBuffer.extraclass)) {
-				writeStringBuffer.extraclass = extraclass;
-				target = writeStringBuffer.target = document.createElement('span');
+			var target = writeString.target;
+			if (!target || !compareSequence(extraclass, writeString.extraclass)) {
+				writeString.extraclass = extraclass;
+				target = writeString.target = document.createElement('span');
 				outputpre.insertBefore(target, null);
 				extraclass instanceof Array && extraclass.forEach((classname) => target.classList.add(classname));
 			}
-			for (let char of string) {
-				target.textContent += String.fromCharCode(char);
-			}
+			target.textContent += String(string);
 			outputpre.parentElement.scrollTop = outputpre.parentElement.scrollHeight;
-		}
-
-		function writeCharCode(outputpre, char, extraclass) {
-			writeStringBuffer(outputpre, [char], extraclass);
 		}
 
 		function closePaneItem() {

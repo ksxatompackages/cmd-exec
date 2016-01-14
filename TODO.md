@@ -3,7 +3,7 @@
 
 ## TODO NEXT
 
- - [ ] Grouping characters
+ - [X] Grouping characters
 
  - [ ] Fix [enable-pane-item-control-helper](https://github.com/ksxatompackages/enable-pane-item-control-helper.git)
 

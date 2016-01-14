@@ -3,6 +3,7 @@
 	'use strict';
 
 	var copySelection = require('ksxatomsupports').clipboard.copySelection;
+	var compareSequence = require('../lib/utils.js').compareSequence.iterable;
 	var ConsoleHistory = require('../lib/console-history.js');
 	var specialcmds = require('../lib/special-commands.js');
 
@@ -183,18 +184,22 @@
 
 		function writeStringBuffer(outputpre, string, extraclass) {
 			outputpre.hidden = false;
+			var target = writeStringBuffer.target;
+			if (!target || !compareSequence(extraclass, writeStringBuffer.extraclass)) {
+				writeStringBuffer.extraclass = extraclass;
+				target = writeStringBuffer.target = document.createElement('span');
+				outputpre.insertBefore(target, null);
+				extraclass instanceof Array && extraclass.forEach((classname) => target.classList.add(classname));
+			}
 			for (let char of string) {
-				writeCharCode(outputpre, char, extraclass);
+				target.textContent += String.fromCharCode(char);
 			}
 			outputpre.parentElement.scrollTop = outputpre.parentElement.scrollHeight;
 		}
 
-		 function writeCharCode(outputpre, char, extraclass) {
-			var ch = document.createElement('span');
-			ch.textContent = String.fromCodePoint(char);
-		 	extraclass instanceof Array && extraclass.forEach((classname) => ch.classList.add(classname));
-		 	outputpre.insertBefore(ch, null);
-		 }
+		function writeCharCode(outputpre, char, extraclass) {
+			writeStringBuffer(outputpre, [char], extraclass);
+		}
 
 		function closePaneItem() {
 			setTimeout(() => handleCommon.paneItem.destroy());

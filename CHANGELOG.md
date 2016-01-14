@@ -1,5 +1,5 @@
 
-## v1.2.7
+## v1.2.9
  * Fixed encoding
  * Same continuous characters would be contained in one `<span>`
 

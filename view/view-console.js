@@ -11,14 +11,12 @@
 	const ESC_KEY = 0x1B;
 	const KEY_UP = 0x26;
 	const KEY_DOWN = 0x28;
-	const NEW_LINE = '\n'.charCodeAt();
-	const TAB_CHAR = '\t'.charCodeAt();
-	const SPACE_CHAR = 0x20;
+	const CHAR_CODE_0 = '0'.charCodeAt();
+	const CHAR_CODE_9 = '9'.charCodeAt();
 	const MINI_EDITOR = Object.freeze({mini: true});
 	const OUT_INPUT = Object.freeze(['from-input', 'text-normal']);
 	const OUT_DATA = Object.freeze(['from-data', 'text-normal']);
 	const OUT_ERROR = Object.freeze(['text-error']);
-
 	module.exports = (elements, param) => {
 
 		function SpecialCommandsParam(command, elements) {
@@ -32,6 +30,7 @@
 			handleClose: handleClose,
 			writeStdIn: writeStdIn,
 			writeString: writeString,
+			writeChar: writeChar,
 			closePaneItem: closePaneItem
 		};
 
@@ -190,8 +189,31 @@
 				outputpre.insertBefore(target, null);
 				extraclass instanceof Array && extraclass.forEach((classname) => target.classList.add(classname));
 			}
-			target.textContent += String(string);
+			for (let char of String(string)) {
+				writeChar(target, char);
+			}
 			outputpre.parentElement.scrollTop = outputpre.parentElement.scrollHeight;
+		}
+
+		function writeChar(target, char) {
+			var charcode = char.charCodeAt();
+			if (charcode === 0x1B && !writeChar.esc) {
+				writeChar.esc = 1;
+				writeChar.num = '';
+				return;
+			}
+			if (writeChar.esc === 1) {
+				writeChar.esc = char === '[' ? 2 : 0;
+			} else if (writeChar.esc === 2) {
+				if (charcode < CHAR_CODE_0 || charcode > CHAR_CODE_9) {
+					switch (char) {}
+					writeChar.esc = 0;
+				} else {
+					writeChar.num += char;
+				}
+			} else {
+				target.textContent += char;
+			}
 		}
 
 		function closePaneItem() {

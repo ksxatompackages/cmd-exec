@@ -19,7 +19,7 @@
  - [X] Clipboard: bring "copy" to console's context menu
 
  - [ ] Escape character
-  - [ ] Don't write some messy stuffs
+  - [X] Don't write some messy stuffs
   - [ ] Colorize console (issue #3)
   - [ ] Detect clear code
 

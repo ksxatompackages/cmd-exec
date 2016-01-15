@@ -1,4 +1,7 @@
 
+## v1.3.0
+ * Perform escape sequence: clear-screen, styles
+
 ## v1.2.9
  * Fixed encoding
  * Same continuous characters would be contained in one `<span>`

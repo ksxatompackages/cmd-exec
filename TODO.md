@@ -18,9 +18,9 @@
 
  - [X] Clipboard: bring "copy" to console's context menu
 
- - [ ] Escape character
+ - [X] Escape character
   - [X] Don't write some messy stuffs
-  - [ ] Colorize console (issue #3)
+  - [X] Colorize console (issue #3)
   - [X] Perform clear-screen code
 
  - [X] Console encoding: ~~UTF-8 seems not so good at this context~~

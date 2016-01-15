@@ -213,7 +213,7 @@
 							target = replaceTerminalTarget(writeString.target.cloneNode(false), outputpre);
 							break;
 						case 'm':
-
+							handleTerminalStyle(writeChar.num);
 							break;
 					}
 					writeChar.esc = 0;
@@ -230,6 +230,10 @@
 			outputpre.insertBefore(target, null);
 			writeString.target = target;
 			return target;
+		}
+
+		function handleTerminalStyle(string) {
+			console.log(`Format: ${string}`);
 		}
 
 		function closePaneItem() {

@@ -237,7 +237,6 @@
 		function handleTerminalStyle(string, outputpre) {
 			var target = replaceTerminalTarget(writeString.target.cloneNode(false), outputpre);
 			var style = writeString.style = getStyle(string);
-			console.log('style', style);
 			Object.assign(target.style, style);
 		}
 

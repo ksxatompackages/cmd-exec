@@ -18,10 +18,10 @@
 
  - [X] Clipboard: bring "copy" to console's context menu
 
- - [ ] Escape character
-  - [ ] Don't write some messy stuffs
-  - [ ] Colorize console (issue #3)
-  - [ ] Detect clear code
+ - [X] Escape character
+  - [X] Don't write some messy stuffs
+  - [X] Colorize console (issue #3)
+  - [X] Perform clear-screen code
 
  - [X] Console encoding: ~~UTF-8 seems not so good at this context~~
   - Use `String` instead of iterate each char of a `Buffer`

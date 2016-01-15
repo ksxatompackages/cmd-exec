@@ -21,7 +21,7 @@
  - [ ] Escape character
   - [X] Don't write some messy stuffs
   - [ ] Colorize console (issue #3)
-  - [ ] Detect clear code
+  - [X] Perform clear-screen code
 
  - [X] Console encoding: ~~UTF-8 seems not so good at this context~~
   - Use `String` instead of iterate each char of a `Buffer`

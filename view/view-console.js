@@ -6,6 +6,7 @@
 	var utils = require('../lib/utils.js');
 	var ConsoleHistory = require('../lib/console-history.js');
 	var specialcmds = require('../lib/special-commands.js');
+	var getStyle = require('../lib/terminal-styles.js');
 
 	var compareSequence = utils.compareSequence.iterable;
 
@@ -188,6 +189,7 @@
 				writeString.extraclass = extraclass;
 				replaceTerminalTarget(document.createElement('span'), outputpre);
 				extraclass instanceof Array && extraclass.forEach((classname) => writeString.target.classList.add(classname));
+				Object.assign(writeString.target.style, writeString.style);
 			}
 			for (let char of String(string)) {
 				writeChar(writeString.target, char, outputpre);
@@ -213,7 +215,7 @@
 							target = replaceTerminalTarget(writeString.target.cloneNode(false), outputpre);
 							break;
 						case 'm':
-							handleTerminalStyle(writeChar.num);
+							handleTerminalStyle(writeChar.num, outputpre);
 							break;
 					}
 					writeChar.esc = 0;
@@ -232,8 +234,10 @@
 			return target;
 		}
 
-		function handleTerminalStyle(string) {
-			console.log(`Format: ${string}`);
+		function handleTerminalStyle(string, outputpre) {
+			var target = replaceTerminalTarget(writeString.target.cloneNode(false), outputpre);
+			var style = writeString.style = getStyle(string);
+			Object.assign(target.style, style);
 		}
 
 		function closePaneItem() {

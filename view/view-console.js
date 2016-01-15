@@ -3,9 +3,11 @@
 	'use strict';
 
 	var copySelection = require('ksxatomsupports').clipboard.copySelection;
-	var compareSequence = require('../lib/utils.js').compareSequence.iterable;
+	var utils = require('../lib/utils.js');
 	var ConsoleHistory = require('../lib/console-history.js');
 	var specialcmds = require('../lib/special-commands.js');
+
+	var compareSequence = utils.compareSequence.iterable;
 
 	const ENTER_KEY = 0x0D;
 	const ESC_KEY = 0x1B;
@@ -17,6 +19,7 @@
 	const OUT_INPUT = Object.freeze(['from-input', 'text-normal']);
 	const OUT_DATA = Object.freeze(['from-data', 'text-normal']);
 	const OUT_ERROR = Object.freeze(['text-error']);
+
 	module.exports = (elements, param) => {
 
 		function SpecialCommandsParam(command, elements) {
@@ -181,21 +184,18 @@
 		}
 
 		function writeString(outputpre, string, extraclass) {
-			outputpre.hidden = false;
-			var target = writeString.target;
-			if (!target || !compareSequence(extraclass, writeString.extraclass)) {
+			if (!writeString.target || !compareSequence(extraclass, writeString.extraclass)) {
 				writeString.extraclass = extraclass;
-				target = writeString.target = document.createElement('span');
-				outputpre.insertBefore(target, null);
-				extraclass instanceof Array && extraclass.forEach((classname) => target.classList.add(classname));
+				replaceTerminalTarget(document.createElement('span'), outputpre);
+				extraclass instanceof Array && extraclass.forEach((classname) => writeString.target.classList.add(classname));
 			}
 			for (let char of String(string)) {
-				writeChar(target, char);
+				writeChar(writeString.target, char, outputpre);
 			}
 			outputpre.parentElement.scrollTop = outputpre.parentElement.scrollHeight;
 		}
 
-		function writeChar(target, char) {
+		function writeChar(target, char, outputpre) {
 			var charcode = char.charCodeAt();
 			if (charcode === 0x1B && !writeChar.esc) {
 				writeChar.esc = 1;
@@ -206,14 +206,30 @@
 				writeChar.esc = char === '[' ? 2 : 0;
 			} else if (writeChar.esc === 2) {
 				if (charcode < CHAR_CODE_0 || charcode > CHAR_CODE_9) {
-					switch (char) {}
+					switch (char) {
+						case 'H':
+							outputpre.hidden = true;
+							utils.clearChildren(outputpre);
+							target = replaceTerminalTarget(writeString.target.cloneNode(false), outputpre);
+							break;
+						case 'm':
+
+							break;
+					}
 					writeChar.esc = 0;
 				} else {
 					writeChar.num += char;
 				}
 			} else {
+				outputpre.hidden = false;
 				target.textContent += char;
 			}
+		}
+
+		function replaceTerminalTarget(target, outputpre) {
+			outputpre.insertBefore(target, null);
+			writeString.target = target;
+			return target;
 		}
 
 		function closePaneItem() {

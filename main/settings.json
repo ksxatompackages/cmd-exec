@@ -5,6 +5,6 @@
 		"description": "See `options.split` at https://atom.io/docs/api/v1.3.1/Workspace#instance-open for more infomation",
 		"type": "string",
 		"default": "",
-		"enum": ["", "top", "left", "bottom", "right"]
+		"enum": ["", "up", "left", "down", "right"]
 	}
 }

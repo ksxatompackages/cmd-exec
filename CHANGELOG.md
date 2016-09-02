@@ -1,5 +1,5 @@
 
-## v1.4.2
+## v1.4.3
  * Make `[hidden]` elements be hidden in Atom 1.10.0
  * Make some css attributes customizable
 

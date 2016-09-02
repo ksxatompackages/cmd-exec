@@ -1,4 +1,8 @@
 
+## v1.4.2
+ * Make `[hidden]` elements be hidden in Atom 1.10.0
+ * Make some css attributes customizable
+
 ## v1.3.0
  * Perform escape sequence: clear-screen, styles
 
